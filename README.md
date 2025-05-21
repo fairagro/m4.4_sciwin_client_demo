@@ -83,7 +83,7 @@ s4n execute local workflows/shp2geojson/shp2geojson.cwl
 
 The outputted file now needs to be committed to move on
 ```bash
-git commit -m "Execution of shp2geojson"
+git add . && git commit -m "Execution of shp2geojson"
 ```
 
 To create Tools based of the Python scripts in the `code` Directory a virtual environment needs to be created using 

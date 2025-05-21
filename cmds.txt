@@ -4,7 +4,7 @@ s4n init
 # Tool Creation
 s4n tool create --name shp2geojson --no-run -o districts.geojson -c osgeo/gdal:ubuntu-full-3.6.3 ogr2ogr districts.geojson data/braunschweig -lco RFC7946=YES
 s4n execute local workflows/shp2geojson/shp2geojson.cwl 
-git commit -m "Execution of shp2geojson"
+git add . && git commit -m "Execution of shp2geojson"
 
 python3 -m venv .venv
 source .venv/bin/activate
