@@ -171,11 +171,13 @@ The last step is to add the outputs to the workflow. Only the `png` file is desi
 s4n workflow connect demo --from plot_map/plot --to @outputs/result
 ```
 
-Saving the workflow is neccessary to have a clean git history for furhter creating CommandLineTools.
+Saving the workflow is neccessary to have a clean git history for further creating CommandLineTools.
 
 ```bash
 s4n workflow save demo
 ```
+
+During the creation `s4n workflow status demo` can always be used to view the connection status.
 
 ## Workflow Execution
 We want to clean our workspace by deleting the outputs we created by creating the CommandLineTools. For the execution a parameter file will be created using the `s4n execute make-template` command.
