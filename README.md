@@ -1,5 +1,5 @@
 # SciWIn Client Demo
-A basic Workflow using SciWIn Client (`s4n`) can be created with the commands hereafter. This guid assumes the usage of unix based operating systems, however Windows should work, too. If not please [open an issue](https://github.com/fairagro/m4.4_sciwin_client/issues/new).
+A basic Workflow using [SciWIn Client (`s4n`)](https://github.com/fairagro/m4.4_sciwin_client) can be created with the commands hereafter. This guide assumes the usage of unix based operating systems, however Windows should work, too. If not please [open an issue](https://github.com/fairagro/m4.4_sciwin_client/issues/new).
 
 ## Installation
 [![GitHub Release](https://img.shields.io/github/v/release/fairagro/m4.4_sciwin_client)](https://github.com/fairagro/m4.4_sciwin_client/releases/latest)
