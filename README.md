@@ -49,7 +49,7 @@ Options:
 ## Demo Repository
 The [Demo Repository](https://github.com/fairagro/sciwin_client_demo) mainly contains two folders `data` and `code`. The result workflow will convert input data into a `geojson` file, download election data and maps it onto the `geojson` data resulting in a `choropleth` graph.
 
-![result]()
+![result](https://raw.githubusercontent.com/fairagro/m4.4_sciwin_client_demo/refs/heads/complete_run/plot.png)
 
 ## Creating the CommandLineTools
 First of all, we start, by creating a new `s4n` project.
