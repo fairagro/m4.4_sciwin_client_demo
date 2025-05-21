@@ -11,16 +11,18 @@ args = parser.parse_args()
 base_url = f"https://votemanager.kdo.de/{args.ags}"
 with urlopen(f"{base_url}/api/termine.json") as response:
     data = json.load(response)
-    
+
 keywords = args.election.split(" ")
-election = [item for item in data["termine"] if all(word in item["name"] for word in keywords)][0]
+election = keywords[0]
+year = keywords[1]
+election = [item for item in data["termine"] if election in item["name"] and year in item["date"]][0]
 
 url = urljoin(urljoin(base_url, election["url"]), "../daten/opendata/open_data.json")
 
 with urlopen(url) as response:
     data = json.load(response)
     
-csv = [item for item in data["csvs"] if "Stadtbezirke" in item["ebene"]][0]
+csv = [item for item in data["csvs"] if "Stadtbezirk" in item["ebene"]][0]
 csv_url = urljoin(url, csv["url"])
 
 with urlopen(csv_url) as response:
