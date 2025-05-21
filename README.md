@@ -146,7 +146,7 @@ s4n workflow create demo
 ```
 
 The workflow we want to build looks like the graph represented in the following image
-![the resulting workflow]()
+![the resulting workflow](https://raw.githubusercontent.com/fairagro/m4.4_sciwin_client_demo/refs/heads/complete_run/workflow.svg)
 
 Knowing that the plot tool needs the geojson, a connection from the geojson output to the corresponding input can be created.
 ```bash
