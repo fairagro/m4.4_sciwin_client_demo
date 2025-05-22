@@ -104,7 +104,7 @@ To create Tools based of the Python scripts in the `code` Directory a virtual en
 ```bash
 python3 -m venv .venv
 source .venv/bin/activate
-pip install plotly pandas kaleido
+pip install plotly pandas kaleido matplotlib
 ```
 
 The next step is to download election data using a series of API calls for which luckily already a script exists. The script downloads the data from `votemanager.kdo.de` and writes the `csv` to stdout.

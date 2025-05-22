@@ -4,7 +4,7 @@ s4n init
 # Tool Creation
 python3 -m venv .venv
 source .venv/bin/activate
-pip install plotly pandas kaleido
+pip install plotly pandas kaleido matplotlib
 
 s4n tool create python code/download_election_data.py --ags 03101000 --election "Bundestagswahl 2025" \> election.csv
 s4n tool create python code/get_feature_info.py --data election.csv
