@@ -30,7 +30,7 @@ s4n workflow connect demo --from @inputs/feature --to plot_map/feature
 s4n workflow connect demo --from @inputs/shapes --to shp2geojson/data_braunschweig
 
 s4n workflow connect demo --from plot_map/plot --to @outputs/map
-s4n workflow connect demo --from plot_election/election --to @outputs/election
+s4n workflow connect demo --from plot_election/election --to @outputs/bar
 
 s4n workflow save demo
 

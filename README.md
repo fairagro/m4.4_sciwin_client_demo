@@ -193,7 +193,7 @@ s4n workflow connect demo --from @inputs/shapes --to shp2geojson/data_braunschwe
 The last step is to add the outputs to the workflow. Only the `png` files are desired, therefore two outputs are created using
 ```bash
 s4n workflow connect demo --from plot_map/plot --to @outputs/map
-s4n workflow connect demo --from plot_election/election --to @outputs/election
+s4n workflow connect demo --from plot_election/election --to @outputs/bar
 ```
 
 Saving the workflow is neccessary to have a clean git history for further creating CommandLineTools.
