@@ -1,2 +1,2 @@
 FROM python
-RUN pip install plotly pandas kaleido
+RUN pip install plotly pandas kaleido matplotlib
