@@ -47,8 +47,9 @@ Options:
 ```
 
 ## Demo Repository
-The [Demo Repository](https://github.com/fairagro/sciwin_client_demo) mainly contains two folders `data` and `code`. The result workflow will convert input data into a `geojson` file, download election data and maps it onto the `geojson` data resulting in a `choropleth` graph.
+The [Demo Repository](https://github.com/fairagro/sciwin_client_demo) mainly contains two folders `data` and `code`. The result workflow will print election results as png, convert input data into a `geojson` file, download election data and maps it onto the `geojson` data resulting in a `choropleth` graph.
 
+![result](https://raw.githubusercontent.com/fairagro/m4.4_sciwin_client_demo/refs/heads/complete_run/election.png)
 ![result](https://raw.githubusercontent.com/fairagro/m4.4_sciwin_client_demo/refs/heads/complete_run/plot.png)
 
 ## Creating the CommandLineTools
