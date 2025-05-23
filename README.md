@@ -130,7 +130,8 @@ The three CommandLineTools now will be combined into an automated pipeline. A ba
 s4n workflow create demo
 ```
 The workflow that is being built looks like the graph represented in the following image
-![the final resulting workflow](https://raw.githubusercontent.com/fairagro/m4.4_sciwin_client_demo/refs/heads/complete_run/workflow_interim.svg)
+
+![the resulting workflow](https://raw.githubusercontent.com/fairagro/m4.4_sciwin_client_demo/refs/heads/complete_run/workflow_interim.svg)
 
 First of all a connection between the donwload script and `get_feature_info` as well as `plot_election` is created by
 ```bash
@@ -192,6 +193,7 @@ s4n tool create -c Dockerfile --container-tag pyplot --enable-network python cod
 
 ## Adding the new tools to Workflow
 The two new tools will now be added to the workflow.
+
 ![the final resulting workflow](https://raw.githubusercontent.com/fairagro/m4.4_sciwin_client_demo/refs/heads/complete_run/workflow_final.svg)
 
 Knowing that the plot tool needs the geojson, a connection from the geojson output to the corresponding input can be created.
