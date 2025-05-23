@@ -12,6 +12,7 @@ s4n tool create -c Dockerfile --container-tag pyplot --enable-network python cod
 
 # Workflow Creation
 s4n workflow create demo
+
 s4n workflow connect demo --from download_election_data/election --to get_feature_info/data
 s4n workflow connect demo --from download_election_data/election --to plot_election/data
 s4n workflow connect demo --from get_feature_info/features --to plot_election/features
@@ -25,6 +26,7 @@ s4n workflow save demo
 
 # Additonal Tools
 s4n tool create --name shp2geojson --no-run -o districts.geojson -c osgeo/gdal:ubuntu-full-3.6.3 ogr2ogr districts.geojson data/braunschweig -lco RFC7946=YES
+
 s4n execute local workflows/shp2geojson/shp2geojson.cwl 
 git add . && git commit -m "Execution of shp2geojson"
 
