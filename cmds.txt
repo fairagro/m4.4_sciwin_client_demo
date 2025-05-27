@@ -6,15 +6,15 @@ python3 -m venv .venv
 source .venv/bin/activate
 pip install plotly pandas kaleido matplotlib
 
-s4n tool create python code/download_election_data.py --ags 03101000 --election "Bundestagswahl 2025" \> election.csv
-s4n tool create python code/get_feature_info.py --data election.csv
-s4n tool create -c Dockerfile --container-tag pyplot --enable-network python code/plot_election.py --data election.csv --features features.json
+s4n tool create python code/download_election_data.py --ags 03101000 --election "Bundestagswahl 2025" \> data.csv
+s4n tool create python code/get_feature_info.py --data data.csv
+s4n tool create -c Dockerfile --container-tag pyplot --enable-network python code/plot_election.py --data data.csv --features features.json
 
 # Workflow Creation
 s4n workflow create demo
 
-s4n workflow connect demo --from download_election_data/election --to get_feature_info/data
-s4n workflow connect demo --from download_election_data/election --to plot_election/data
+s4n workflow connect demo --from download_election_data/data --to get_feature_info/data
+s4n workflow connect demo --from download_election_data/data --to plot_election/data
 s4n workflow connect demo --from get_feature_info/features --to plot_election/features
 
 s4n workflow connect demo --from @inputs/ags --to download_election_data/ags
@@ -30,11 +30,11 @@ s4n tool create --name shp2geojson --no-run -o districts.geojson -c osgeo/gdal:u
 s4n execute local workflows/shp2geojson/shp2geojson.cwl 
 git add . && git commit -m "Execution of shp2geojson"
 
-s4n tool create -c Dockerfile --container-tag pyplot --enable-network python code/plot_map.py --geojson districts.geojson --csv election.csv --feature F3 --on gebiet-nr:BEZNUM --output_name plot
+s4n tool create -c Dockerfile --container-tag pyplot --enable-network python code/plot_map.py --geojson districts.geojson --csv data.csv --feature F3 --on gebiet-nr:BEZNUM --output_name plot
 
 # Adding steps to Workflow
 s4n workflow connect demo --from shp2geojson/districts --to plot_map/geojson
-s4n workflow connect demo --from download_election_data/election --to plot_map/csv
+s4n workflow connect demo --from download_election_data/data --to plot_map/csv
 
 s4n workflow connect demo --from @inputs/feature --to plot_map/feature
 s4n workflow connect demo --from @inputs/shapes --to shp2geojson/data_braunschweig
