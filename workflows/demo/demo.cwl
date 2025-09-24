@@ -8,11 +8,18 @@ inputs:
   type: string
 - id: ags
   type: string
+- id: feature
+  type: string
+- id: shapes
+  type: Directory
 
 outputs:
 - id: bar
   type: File
   outputSource: plot_election/election
+- id: map
+  type: File
+  outputSource: plot_map/plot
 
 steps:
 - id: download_election_data
@@ -40,3 +47,21 @@ steps:
   run: ../plot_election/plot_election.cwl
   out:
   - election
+- id: shp2geojson
+  in:
+  - id: data_braunschweig
+    source: shapes
+  run: ../shp2geojson/shp2geojson.cwl
+  out:
+  - districts
+- id: plot_map
+  in:
+  - id: geojson
+    source: shp2geojson/districts
+  - id: csv
+    source: download_election_data/data
+  - id: feature
+    source: feature
+  run: ../plot_map/plot_map.cwl
+  out:
+  - plot
